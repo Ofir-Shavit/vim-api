@@ -1,0 +1,39 @@
+{
+  "name": "code-interview-master",
+  "version": "1.0.0",
+  "description": "These are instructions for your coding exercise. Please read them carefully and make sure to ask whatever question pops into your mind.",
+  "main": "./src/index.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint src/**/*.ts --fix --quiet",
+    "build": "tsc",
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/morgan": "^1.9.2",
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.3",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
