@@ -8,6 +8,7 @@ const getAppointments = async (req: Request, res: Response) => {
     const {minScore, specialty, date}: Params = req.query;
 
     if (!isValidParams({minScore, specialty, date})) {
+        console.log('Bad parameters from the request');
         return res.status(400).send('Bad parameters');
     }
 
@@ -32,6 +33,7 @@ const getAppointments = async (req: Request, res: Response) => {
         .sort((firstProvider, secondProvider) => secondProvider.score - firstProvider.score)
         .map(provider => provider.name);
 
+    console.log('Got appointments successfully.');
     res.send(filteredProviders);
 };
 
@@ -39,13 +41,15 @@ const setAppointment = async (req: Request, res: Response) => {
 
     const {name, date} = req.body;
 
-    const available = providers.find((provider) =>
+    const available = providers.find((provider: Provider) =>
         provider.name === name && isDateAvailable(provider, date)
     );
 
     if (available) {
+        console.log('Found an available appointment');
         res.send('Appointment available.');
     } else {
+        console.log('Could not found an available appointment');
         res.status(400).send('Appointment is not available.');
     }
 };
